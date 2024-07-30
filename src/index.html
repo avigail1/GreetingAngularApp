@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>OpenAiClient</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"></script>
+</head>
+<body class="mat-typography">
+  <app-root></app-root>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyAyv-_Y14KDZ-K3C0Hy0cCg9MpUMYV830o",
+      authDomain: "create-your-greeting.firebaseapp.com",
+      projectId: "create-your-greeting",
+      storageBucket: "create-your-greeting.appspot.com",
+      messagingSenderId: "19689648340",
+      appId: "1:19689648340:web:20eb4192bddcf7683acb41"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+  </script>
+</body>
+</html>
