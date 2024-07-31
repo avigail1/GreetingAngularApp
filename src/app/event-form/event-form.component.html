@@ -1,99 +1,70 @@
-<form [formGroup]="eventForm" (ngSubmit)="onSubmit()"  *ngIf="showform">
-  <!-- class="event-form text-sm-end" -->
-  <div >
-    <!-- class="form-group" -->
+<form [formGroup]="eventForm" (ngSubmit)="onSubmit()"  *ngIf="showform" class="event-form text-sm-end">
+  <div class="form-group">
     <label for="eventType">:סוג אירוע</label>
-    <select id="eventType" formControlName="eventType" (change)="onEventTypeChange()" >
-      <!-- class="form-control text-sm-end" -->
+    <select id="eventType" formControlName="eventType" (change)="onEventTypeChange()" class="form-control text-sm-end">
       <option *ngFor="let type of eventTypes" [value]="type">{{type}}</option>
     </select>
   </div>
 
-  <div >
-    <!-- class="form-group" -->
+  <div  class="form-group">
     <label for="eventName">:שם חתן האירוע</label>
-    <input id="eventName" formControlName="eventName" type="text" />
-    <!-- class="form-control text-sm-end" -->
+    <input id="eventName" formControlName="eventName" type="text"  class="form-control text-sm-end"/>
   </div>
 
-  <div>
-    <!-- class="form-group" -->
+  <div class="form-group">
     <label for="greetingStyle">:סגנון הברכה</label>
-    <select id="greetingStyle" formControlName="greetingStyle" >
-      <!-- class="form-control text-sm-end" -->
+    <select id="greetingStyle" formControlName="greetingStyle"  class="form-control text-sm-end">
       <option *ngFor="let style of greetingStyles" [value]="style">{{style}}</option>
     </select>
   </div>
 
-  <div >
-    <!-- class="form-group" -->
+  <div  class="form-group">
     <label for="greetingLength">:אורך הברכה</label>
-    <input id="greetingLength" formControlName="greetingLength" type="number"  />
-    <!-- class="form-control text-sm-end" -->
+    <input id="greetingLength" formControlName="greetingLength" type="number"   class="form-control text-sm-end" />
   </div>
 
-  <div>
-    <!-- class="form-group" -->
+  <div class="form-group">
     <label for="relationship">:קרבה</label>
-    <input id="relationship" formControlName="relationship" type="text"/>
-    <!-- class="form-control text-sm-end"  -->
+    <input id="relationship" formControlName="relationship" type="text" class="form-control text-sm-end" />
   </div>
 
-  <div *ngIf="showAgeField">
-    <!-- class="form-group"  -->
+  <div *ngIf="showAgeField" class="form-group">
     <label for="age">:גיל</label>
-    <input id="age" formControlName="age" type="number"  />
-    <!-- class="form-control text-sm-end" -->
+    <input id="age" formControlName="age" type="number"   class="form-control text-sm-end"/>
   </div>
 
-  <div *ngIf="showYearsMarriedField">
-    <!-- class="form-group"  -->
+  <div *ngIf="showYearsMarriedField" class="form-group">
     <label for="yearsMarried">:שנות נישואין</label>
-    <input id="yearsMarried" formControlName="yearsMarried" type="number"  />
-    <!-- class="form-control text-sm-end" -->
+    <input id="yearsMarried" formControlName="yearsMarried" type="number"  class="form-control text-sm-end" />
   </div>
   <br>
 
-  <div>
-    <!-- class="input-group form-group" -->
-    <textarea id="personalContent"  aria-label="תוכן אישי"
-      formControlName="personalContent"></textarea>
-    <span >תוכן אישי</span>
-    <!-- class="input-group-text" -->
-    <!-- class="form-control text-sm-end" -->
+  <div class="input-group  form-group">
+    <textarea class="form-control text-sm-end" aria-label="תוכן אישי"  formControlName="personalContent"></textarea>
+    <span class="input-group-text ">תוכן אישי</span>
   </div>
+
+
   <br>
-  <div >
-    <!-- class="text-center" -->
-    <button *ngIf="loading == false" type="submit" >שלח</button>
-    <!-- class="btn btn-info" -->
+  <div  class="text-center">
+    <button *ngIf="loading == false" type="submit"  class="btn btn-info">שלח</button>
   </div>
 </form>
 
-<div *ngIf="currentGreeting" >
-  <!-- class="greeting-section" -->
-  <p >{{ currentGreeting }}</p>
-  <!-- class="text-sm-end" -->
+<div *ngIf="currentGreeting" class="greeting-section"> 
+  <p  class="text-sm-end">{{ currentGreeting }}</p>
 </div>
 
-<div role="group">
-  <!-- class="btn-group d-grid gap-2  justify-content-md-center" -->
-  <div *ngIf="currentGreeting" >
-    <!-- class="greeting-section" -->
-    <button (click)="returnToPromt()"  type="button">חזרה לשינוי פרטי הברכה</button>
-    <!-- class="btn btn-outline-info   me-md-2" -->
-    <button (click)="nextGreeting()"  type="button">הצג ברכה נוספת</button>
-    <!-- class="  btn btn-outline-info  me-md-2"  -->
-    <button (click)="copyToClipboard()" >העתק ללוח</button>
-    <!-- class=" btn btn-outline-info" -->
+<div role="group" class="btn-group d-grid gap-2  justify-content-md-center">
+  <div *ngIf="currentGreeting"  class="greeting-section" >
+    <button (click)="returnToPromt()"  type="button" class="btn btn-outline-info   me-md-2">חזרה לשינוי פרטי הברכה</button>
+    <button (click)="nextGreeting()"  type="button" class="  btn btn-outline-info  me-md-2">הצג ברכה נוספת</button>
+    <button (click)="copyToClipboard()"  class=" btn btn-outline-info">העתק ללוח</button>
   </div>
 </div>
 
-<div *ngIf="loading;" >
-  <!-- class="text-center" -->
-  <div role="status">
-    <!-- class="spinner-border text-info" -->
-    <span >Loading...</span>
-    <!-- class="visually-hidden text-sm-end" -->
+<div *ngIf="loading;"  class="text-center" >
+  <div role="status" class="spinner-border text-info">
+    <span  class="visually-hidden text-sm-end">Loading...</span>
   </div>
 </div>
