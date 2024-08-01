@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,14 +10,14 @@ import { Observable } from 'rxjs';
 export class OpenaiService {
 
   private apiUrl = 'https://api.openai.com/v1/chat/completions';
-  // private apiKey = secrets.OPEN_AI_KEY;
+  private apiKey = environment.OPEN_AI_KEY;
 
   constructor(private http: HttpClient) {}
 
   generateGreetings(prompt: string): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      // 'Authorization': `Bearer ${this.apiKey}`
+      'Authorization': `Bearer ${this.apiKey}`
     });
 
     const body = {

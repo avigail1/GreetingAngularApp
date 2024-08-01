@@ -42,4 +42,6 @@ testem.log
 Thumbs.db
 
 # .gitignore
+ src/environment.prod
+ src/environment
 .env
