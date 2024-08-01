@@ -51,20 +51,28 @@
   </div>
 </form>
 
-<div *ngIf="currentGreeting" class="greeting-section"> 
-  <p  class="text-sm-end">{{ currentGreeting }}</p>
+<div *ngIf="currentGreeting" class="greeting-section">
+  <pre class="text-center poem">
+    {{ currentGreeting }}
+  </pre>
 </div>
 
-<div role="group" class="btn-group d-grid gap-2  justify-content-md-center">
-  <div *ngIf="currentGreeting"  class="greeting-section" >
-    <button (click)="returnToPromt()"  type="button" class="btn btn-outline-info   me-md-2">חזרה לשינוי פרטי הברכה</button>
-    <button (click)="nextGreeting()"  type="button" class="  btn btn-outline-info  me-md-2">הצג ברכה נוספת</button>
-    <button (click)="copyToClipboard()"  class=" btn btn-outline-info">העתק ללוח</button>
+<div role="group" class="btn-group d-flex justify-content-center">
+  <div *ngIf="currentGreeting" class="greeting-section  me-2">
+    <button (click)="returnToPromt()" type="button" class="btn btn-outline-info me-2">חזרה לשינוי פרטי הברכה</button>
+    <button (click)="nextGreeting()" type="button" class="btn btn-outline-info me-2">הצג ברכה נוספת</button>
+    <button (click)="copyToClipboard()" class="btn btn-outline-info me-2">העתק ללוח</button>
   </div>
 </div>
+
 
 <div *ngIf="loading && !timeout;"  class="text-center" >
   <div role="status" class="spinner-border text-info">
     <span  class="visually-hidden text-sm-end">Loading...</span>
   </div>
+</div>
+
+<div *ngIf="loading && timeout;"  class="text-center" >
+  <h2>מצטערים... לא הצלחנו ליצור את הברכה שביקשתם</h2>
+  <p>תוכלו לנסות מאוחר יותר</p>
 </div>

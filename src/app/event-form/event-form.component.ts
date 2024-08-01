@@ -53,15 +53,19 @@ export class EventFormComponent {
     this.showform = false;
     const formData = this.eventForm.value;
     const prompt = this.createPrompt(formData);
-
   
-    this.openaiService.generateGreetings(prompt).subscribe(response => {
-      this.greetings = response.choices;
-      this.currentGreetingIndex = 0;
-      this.currentGreeting = this.greetings[this.currentGreetingIndex].message.content;
-      this.loading = false;
-    });
-
+    this.openaiService.generateGreetings(prompt).subscribe(
+      (response) => {
+        this.greetings = response.choices;
+        this.currentGreetingIndex = 0;
+        this.currentGreeting = this.greetings[this.currentGreetingIndex].message.content;
+        this.loading = false;
+      },
+      (error) => {
+        console.error('An error occurred:', error);
+        this.timeout = true;
+      }
+    );
   }
 
   createPrompt(formData: {

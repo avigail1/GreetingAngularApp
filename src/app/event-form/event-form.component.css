@@ -32,3 +32,9 @@
 .copy-button:hover {
   background-color: #e0a800;
 }
+
+.poem {
+  text-align: center; /* Align text in the center */
+  white-space: pre-line; /* Preserve line breaks in the text */
+  font-family: var(system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+}
