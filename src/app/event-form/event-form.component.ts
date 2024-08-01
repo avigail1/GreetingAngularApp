@@ -27,6 +27,7 @@ export class EventFormComponent {
   generatedGreeting?: string;
   loading = false;
   showform = true;
+  timeout = false;
 
   constructor(private fb: FormBuilder, private openaiService: OpenaiService) {
     this.eventForm = this.fb.group({

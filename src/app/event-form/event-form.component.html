@@ -63,7 +63,7 @@
   </div>
 </div>
 
-<div *ngIf="loading;"  class="text-center" >
+<div *ngIf="loading && !timeout;"  class="text-center" >
   <div role="status" class="spinner-border text-info">
     <span  class="visually-hidden text-sm-end">Loading...</span>
   </div>
